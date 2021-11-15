@@ -1,0 +1,48 @@
+@mixin ffb {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+@mixin mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin mx($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin my($value) {
+  margin-top: $value;
+  margin-bottom: $value;
+}
+
+@mixin px($value: 15px) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+@mixin py($value: 15px) {
+  padding-top: $value;
+  padding-bottom: $value;
+}
+
+@mixin button($color: $white, $background-color: $orange) {
+  font-size: 0.7rem;
+  text-decoration: none;
+  width: 220px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color;
+  background-color: $background-color;
+  border: 1px solid $background-color;
+}
+
+@mixin scale($value, $fs) {
+  transform: scale($value);
+  font-size: calc(#{$fs} / #{$value});
+}

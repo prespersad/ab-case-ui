@@ -1,0 +1,33 @@
+html {
+  font-size: 20px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+  line-height: $lhb;
+  @include ffb;
+  position: relative;
+  z-index: 0;
+}
+
+.wrapper {
+  max-width: 970px;
+  width: 100%;
+  @include mx-auto;
+  @include px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tabs-container {
+  @include py(2rem);
+}

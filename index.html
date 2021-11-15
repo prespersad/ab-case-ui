@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>A/B case UI</title>
+</head>
+<body>
+    <header class="header header--sticky">
+        <div class="wrapper">
+            <a class="header__logo_wrapper" href="index.html">
+                <img src="/images/logo.svg" class="header__logo" alt="FedEx" style="outline: none;">
+            </a>
+            <div class="user-options-wrapper">
+                <div class="user-options">
+                    <div class="user-options__option user-options__sign-in">
+                        <img class="user-options__icon" alt="Aanmelden bij Fedex.com" src="/images/user-icon.svg">
+                    </div>
+                    <div class="user-options__option user-options__search-btn">
+                        <img class="user-options__icon" alt="Zoeken" src="/images/search-icon.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="container">
+            <div class="wrapper">
+                <div class="tabs-container">
+                    <section class="row">
+                        <!-- TABS -->
+                        <ul class="nav-tabs">
+                            <li><a id="menu-item-create-case" class="btn button btn--active" href="index.html">Create a new A/B case</a></li>
+                            <li><a id="menu-item-saved-cases" class="btn button">Saved A/B cases</a></li>
+                        </ul>
+                        <!-- TAB PANES -->
+                        <div class="tab-content" id="create-case">
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

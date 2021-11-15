@@ -322,7 +322,7 @@ export const lsFsData = () => {
         fdArr.push(fdCase);
         localStorage.setItem('fdSavedCases', JSON.stringify(fdArr));
 
-        //location.reload();
+        location.reload();
 
     });
 }

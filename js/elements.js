@@ -35,7 +35,8 @@ export const inputFieldName = new InputField({
     type : 'text',
     name : 'case-name',
     id : 'case-name',
-    placeholder : 'name of this A/B case'
+    placeholder : 'name of this A/B case',
+    required : true
 });
 
 // Section 1: Select Field Region
@@ -48,7 +49,8 @@ export const selectFieldRegion = new SelectField({
     classModifierSelect: 'field',
     name: 'case-region',
     id: 'case-region',
-    text: 'choose the region to apply'
+    text: 'choose the region to apply',
+    required: true
 });
 
 // Section 1: Option Fields for the Select Field Region
@@ -89,7 +91,8 @@ export const statusRadioButtons = new CheckInputs({
     labelText : statusArr,
     type : 'radio',
     classModifierInput : 'field',
-    classModifierLabel : 'label'
+    classModifierLabel : 'label',
+    required : true
 });
 
 // Section 1: Checkbox Field Type
@@ -120,7 +123,8 @@ export const typeCheckboxes = new CheckInputs({
     labelText : typeCreArr,
     type : 'checkbox',
     classModifierInput : 'field',
-    classModifierLabel : 'label'
+    classModifierLabel : 'label',
+    required : true
 });
 
 // Section 2: Form Section Reveal Cases Image, Video and/or Elements
@@ -481,19 +485,21 @@ export const selectFieldSCR = new SelectField({
 
 // Saved Cases: Option Fields for Filter element Region (Select)
 export const regionFiltArr = async () => {
+    let data = JSON.parse(localStorage.getItem('fdSavedCases'));
+    console.log(data);
     let qs = document.querySelector('#pane-saved-cases #case-region');
-    let url = './json/regions.json';
-    try {
-        let res = await fetch(url);
-        let data = await res.json();
+    if(data != null) {
         data.forEach(item => {
-            let option = document.createElement('option');
-            option.setAttribute('value', item.code);
-            option.textContent = item.name;
-            qs.appendChild(option);
+            if(item['case-region'] != '') {
+                console.log(item['case-region']);
+                let option = document.createElement('option');
+                option.setAttribute('value', item['case-region']);
+                option.textContent = item['case-region'];
+                qs.appendChild(option);
+            } else {
+                return;
+            }
         });
-    } catch (err) {
-        console.error(err);
     }
 }
 

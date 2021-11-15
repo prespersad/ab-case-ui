@@ -93,6 +93,7 @@ export class InputField {
         this.name = obj.name;
         this.id = obj.id;
         this.placeholder = obj.placeholder;
+        this.required = obj.required;
     }
 
     inputField() {
@@ -119,7 +120,10 @@ export class InputField {
             'id': this.id
             
         });
-        if (this.placeholder !== undefined) {
+        if(this.required != undefined) {
+            input.required = this.required;
+        }
+        if (this.placeholder != undefined) {
             input.setAttribute('placeholder', this.placeholder);
         }
         div.appendChild(input);
@@ -149,6 +153,7 @@ export class SelectField {
         this.id = obj.id;
         this.text = obj.text;
         this.optionList = obj.optionList;
+        this.required = obj.required;
     }
 
     selectField() {
@@ -173,6 +178,9 @@ export class SelectField {
             'name': this.name,
             'id': this.id
         });
+        if(this.required != undefined) {
+            select.required = this.required;
+        }
         div.appendChild(select);
 
         // Option Default
@@ -206,6 +214,7 @@ export class CheckInputs {
         this.type = obj.type;
         this.classModifierInput = obj.classModifierInput;
         this.classModifierLabel = obj.classModifierLabel;
+        this.required = obj.required;
     }
 
     checkinputs() {
@@ -241,6 +250,9 @@ export class CheckInputs {
                 'id': item.attr,
                 'value': item.labelText.toLowerCase()
             });
+            if(this.required != undefined) {
+                input.required = this.required;
+            }
             if (item.dataLink !== undefined) {
                 input.setAttribute('data-link', item.dataLink)
             }

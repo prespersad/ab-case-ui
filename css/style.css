@@ -268,6 +268,18 @@ form,
   }
 }
 
+.filter-group select {
+  text-transform: capitalize;
+}
+
+.filter-group select option {
+  text-transform: capitalize;
+}
+
+.filter-group select option:first-child {
+  text-transform: lowercase;
+}
+
 .field-container--input-text, .field-container--input-select, .field-container--input-file {
   position: relative;
 }
@@ -507,6 +519,32 @@ button--disabled,
 a.button--disabled,
 .btn--disabled,
 a.btn--disabled {
+  font-size: 0.7rem;
+  text-decoration: none;
+  width: 220px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #333;
+  background-color: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  cursor: not-allowed;
+}
+
+button--disabled:hover, button--disabled:focus,
+a.button--disabled:hover,
+a.button--disabled:focus,
+.btn--disabled:hover,
+.btn--disabled:focus,
+a.btn--disabled:hover,
+a.btn--disabled:focus {
   font-size: 0.7rem;
   text-decoration: none;
   width: 220px;

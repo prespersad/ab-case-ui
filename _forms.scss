@@ -1,0 +1,217 @@
+input,
+select,
+option,
+texteara {
+  appearance: none;
+}
+
+select {
+  background-image: url(/images/chevron-down-icon.svg);
+  background-repeat: no-repeat;
+  background-size: 20px 10px;
+  background-position: bottom 15px right 15px;
+}
+
+form,
+.wrapper--saved-cases {
+  @include mx(-10px);
+}
+
+// Sections
+.form-section,
+.form-reveal,
+.filter-group {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  align-items: center;
+
+  .heading {
+    flex: 0 0 100%;
+  }
+
+  .field-container {
+    flex: 0 0 100%;
+    @include px(10px);
+    &--input-text,
+    &--input-select,
+    &--input-file,
+    &--input-check {
+      @include my(0.5rem);
+    }
+    @media screen and (min-width: 768px) {
+      flex: 0 0 50%;
+      @include my(0.75rem);
+    }
+
+    &--button-row {
+      flex: 0 0 100%;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+  }
+}
+
+.form-reveal {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  &.show {
+    opacity: 1;
+    max-height: 600px;
+  }
+  .heading {
+    @include px(10px);
+  }
+}
+
+.filter-group {
+  @include mx(-10px);
+
+  @media screen and (min-width: 768px) {
+    .field-container {
+      &--button-row {
+        flex: 0 0 50%;
+      }
+    }
+  }
+  select {
+    text-transform: capitalize;
+    option {
+      text-transform: capitalize;
+      &:first-child {
+        text-transform: lowercase;
+      }
+    }
+  }
+}
+
+.field-container {
+  &--input-text,
+  &--input-select,
+  &--input-file {
+    position: relative;
+
+    input,
+    select {
+      background-color: $light-grey;
+      display: flex;
+      flex-flow: column wrap;
+      padding: 40px 15px 15px;
+      width: 100%;
+      border: 0;
+      &::placeholder {
+        color: $default-color;
+        font-size: 1rem;
+      }
+    }
+
+    label {
+      font-size: 0.5rem;
+      text-transform: uppercase;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding-left: 10px;
+    }
+  }
+
+  &--input-file {
+    .filename {
+      background-color: $light-grey;
+      display: flex;
+      flex-flow: column wrap;
+      padding: 25px 15px 15px;
+      width: 100%;
+      border: 0;
+    }
+  }
+  &--input-check {
+    display: flex;
+    flex-flow: row wrap;
+    .heading {
+      flex: 0 0 100%;
+    }
+  }
+
+  &--radio,
+  &--checkbox {
+    flex: 0 0 calc(100% / 3);
+  }
+}
+
+// Custom Checkboxes and Radio Buttons
+input {
+  &[type="checkbox"],
+  &[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    & + label {
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+      &::before {
+        content: "";
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: text-top;
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid $blue;
+      }
+    }
+
+    // Checkmark. Could be replaced with an image
+    &:checked + label:after {
+      content: url(/images/checkmark-icon.svg);
+      position: absolute;
+      left: 5px;
+      top: -5px;
+      transform: translateY(-25%);
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  &[type="radio"] {
+    & + label {
+      &::before {
+        border-radius: 50%;
+      }
+    }
+    &:checked + label:after {
+      content: "";
+      position: absolute;
+      width: 0.8rem;
+      height: 0.8rem;
+      background-color: $blue;
+      border: 2px solid $white;
+      border-radius: 50%;
+      left: 2px;
+      top: 6px;
+    }
+  }
+
+  &[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    opacity: 0;
+    &.disabled {
+      pointer-events: none;
+      cursor: none;
+      & + div {
+        opacity: 0.4;
+      }
+    }
+  }
+}

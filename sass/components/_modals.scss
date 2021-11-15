@@ -1,0 +1,62 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -10;
+  transition: opacity 0.3s ease-in;
+  display: none;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($white, 0.7);
+  backdrop-filter: blur(2px);
+  &__container {
+    background-color: $white;
+    padding: 2rem;
+    border: 2px solid $dark-grey;
+    width: 90vw;
+    @media screen and (min-width: 768px) {
+      width: 80vw;
+      padding: 4rem;
+    }
+    @media screen and (min-width: 992px) {
+      width: 70vw;
+      padding: 5rem;
+    }
+    @media screen and (min-width: 1200px) {
+      width: 60vw;
+      padding: 5rem;
+    }
+  }
+  &.show {
+    display: flex;
+    opacity: 1;
+    z-index: 999;
+  }
+  .summary {
+    line-height: 1.8;
+    li {
+      span {
+        text-transform: capitalize;
+      }
+    }
+    .item--details {
+      ul {
+        padding-left: 1rem;
+        font-size: 85%;
+        @include my(0.5rem);
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .button-row {
+    margin-top: 2rem;
+  }
+}

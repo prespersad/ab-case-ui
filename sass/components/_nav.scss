@@ -1,0 +1,11 @@
+// NAV
+.nav-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  li {
+    @include px;
+    @include my(0.75rem);
+  }
+}

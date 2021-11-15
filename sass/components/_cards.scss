@@ -1,0 +1,51 @@
+// SUMMARY LIST
+.summary-list-container {
+  .list__summary {
+    background-color: $light-grey;
+    margin: 0;
+    padding: 0 6rem;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    line-height: 0;
+    &.open {
+      height: auto;
+      opacity: 1;
+      padding: 4rem 6rem;
+      line-height: 1.8;
+    }
+    li:not(.item--details):not(.item-css-class):not(.item-source) {
+      text-transform: capitalize;
+    }
+    .item--details__list {
+      padding-left: 1rem;
+      font-size: 90%;
+      ul {
+        @include my(0.5rem);
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .heading {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid $light-grey;
+    margin: 0;
+    @include py(1.4rem);
+    &::after {
+      content: url(/images/chevron-down-icon.svg);
+      width: 1rem;
+      height: auto;
+    }
+  }
+  &:last-of-type {
+    .heading {
+      border-bottom: 2px solid $light-grey;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+// HEADER
+.header {
+  background-color: $purple;
+  height: 75px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  .header__logo_wrapper {
+    max-width: 88px;
+    display: inherit;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .user-options-wrapper {
+    .user-options {
+      display: flex;
+      flex-flow: row wrap;
+      margin-right: -10px;
+      &__option {
+        @include px(10px);
+        img {
+          width: 24px;
+          height: auto;
+        }
+      }
+    }
+  }
+}

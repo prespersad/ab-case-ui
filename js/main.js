@@ -4,8 +4,14 @@ import { contentToggle, revealField, getInputData, lsFsData, displayModal, displ
 
 setAttributes();
 
+// Activate Disabled Link after Form Submit
+activateLink();
+
+let tcCreate = document.querySelector('#create-case'),
+    tcSaved = document.querySelector('#saved-cases');
+
 // PAGE CREATE CASES
-if (window.location.pathname == '/index.html') {
+if (tcCreate) {
 
     // ELEMENTS
     // Tab Pane: Create Case
@@ -108,11 +114,8 @@ if (window.location.pathname == '/index.html') {
     displayModal();
 }
 
-// Activate Disabled Link after Form Submit
-activateLink();
-
 // PAGE SAVED CASES
-if (window.location.pathname == '/saved-cases.html') {
+if (tcSaved) {
 
     // ELEMENTS
     // Tab Pane: Saved Cases

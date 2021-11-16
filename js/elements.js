@@ -1,11 +1,11 @@
 import { setAttributes } from './helpers.js';
-import { TabPane, Section, Div, InputField, SelectField, CheckInputs, Button, Header } from './constructors.js';
+import * as cs from './constructors.js';
 
 setAttributes();
 
 // PAGE CREATE CASE
 // Tab Pane: Create Case
-export const tabPaneCreate = new TabPane({
+export const tabPaneCreate = new cs.TabPane({
     querySelector : '#create-case',
     id : 'pane-create-case',
     title : 'Create a new A/B Case:'
@@ -19,13 +19,13 @@ export const createForm = () => {
 }
 
 // Section 1: General Form Section
-export const formSectionS1 = new Section({
+export const formSectionS1 = new cs.Section({
     className1 : 'form-section',
     classModifier : 'step-1'
 });
 
 // Section 1: Input Field Name
-export const inputFieldName = new InputField({
+export const inputFieldName = new cs.InputField({
     querySelector : '.form-section--step-1',
     tabPaneclassName : 'input-text',
     classModifierLabel : 'label',
@@ -40,7 +40,7 @@ export const inputFieldName = new InputField({
 });
 
 // Section 1: Select Field Region
-export const selectFieldRegion = new SelectField({
+export const selectFieldRegion = new cs.SelectField({
     querySelector: '.form-section--step-1',
     className: 'input-select',
     classModifierLabel: 'label',
@@ -84,7 +84,7 @@ const statusArr = [
         'name' : 'status'
     }
 ];
-export const statusRadioButtons = new CheckInputs({
+export const statusRadioButtons = new cs.CheckInputs({
     querySelector : '.form-section--step-1',
     className : 'input-check',
     headingText : 'Status:',
@@ -116,7 +116,7 @@ const typeCreArr = [
         'dataLink' : 'type-element'
     }
 ];
-export const typeCheckboxes = new CheckInputs({
+export const typeCheckboxes = new cs.CheckInputs({
     querySelector : '.form-section--step-1',
     className : 'input-check',
     headingText : 'Choose the type:',
@@ -128,13 +128,13 @@ export const typeCheckboxes = new CheckInputs({
 });
 
 // Section 2: Form Section Reveal Cases Image, Video and/or Elements
-export const formSectionS2 = new Section({
+export const formSectionS2 = new cs.Section({
     className1 : 'form-section',
     classModifier : 'step-2'
 });
 
 // Section 2: Form Reveal Image Case
-export const icDiv = new Div({
+export const icDiv = new cs.Div({
     querySelector : '.form-section--step-2',
     className : 'form-reveal',
     classNameModifier : 'image-case',
@@ -144,7 +144,7 @@ export const icDiv = new Div({
 });
 
 // Section 2: Form Reveal Image Case: Text Input Image Alt Text
-export const inputFieldIT = new InputField({
+export const inputFieldIT = new cs.InputField({
     querySelector : '.form-reveal--image-case', 
     tabPaneclassName : 'input-text', 
     classModifierLabel : 'label', 
@@ -168,7 +168,7 @@ const imageFormatArr = [
         'code' : 'jpg'
     }
 ];
-export const selectFieldIF = new SelectField({
+export const selectFieldIF = new cs.SelectField({
     querySelector: '.form-reveal--image-case',
     className: 'input-select',
     classModifierLabel: 'label',
@@ -182,7 +182,7 @@ export const selectFieldIF = new SelectField({
 });
 
 // Section 2: Form Reveal Image Case: Text Input Image Source
-export const inputFieldISrc = new InputField({
+export const inputFieldISrc = new cs.InputField({
     querySelector : '.form-reveal--image-case', 
     tabPaneclassName : 'input-file', 
     classModifierLabel : 'label', 
@@ -196,7 +196,7 @@ export const inputFieldISrc = new InputField({
 });
 
 // Section 2: Form Reveal Image Case: Text Input Image Class
-export const inputFieldIC = new InputField({
+export const inputFieldIC = new cs.InputField({
     querySelector : '.form-reveal--image-case', 
     tabPaneclassName : 'input-text', 
     classModifierLabel : 'label', 
@@ -210,7 +210,7 @@ export const inputFieldIC = new InputField({
 });
 
 // Section 2: Form Reveal Video Case
-export const vcDiv = new Div({
+export const vcDiv = new cs.Div({
     querySelector : '.form-section--step-2',
     className : 'form-reveal',
     classNameModifier : 'video-case',
@@ -220,7 +220,7 @@ export const vcDiv = new Div({
 });
 
 // Section 2: Form Reveal Video Case: Text Input Video Alt Text
-export const inputFieldVT = new InputField({
+export const inputFieldVT = new cs.InputField({
     querySelector : '.form-reveal--video-case', 
     tabPaneclassName : 'input-text', 
     classModifierLabel : 'label', 
@@ -244,7 +244,7 @@ export const videoFormatArr = [
         'code' : 'mp4'
     }
 ];
-export const selectFieldVF = new SelectField({
+export const selectFieldVF = new cs.SelectField({
     querySelector: '.form-reveal--video-case',
     className: 'input-select',
     classModifierLabel: 'label',
@@ -258,7 +258,7 @@ export const selectFieldVF = new SelectField({
 });
 
 // Section 2: Form Reveal Video Case: Text Input Video Source
-export const inputFieldVSrc = new InputField({
+export const inputFieldVSrc = new cs.InputField({
     querySelector : '.form-reveal--video-case', 
     tabPaneclassName : 'input-file', 
     classModifierLabel : 'label', 
@@ -272,7 +272,7 @@ export const inputFieldVSrc = new InputField({
 });
 
 // Section 2: Form Reveal Video Case: Text Input Video Class
-export const inputFieldVC = new InputField({
+export const inputFieldVC = new cs.InputField({
     querySelector : '.form-reveal--video-case', 
     tabPaneclassName : 'input-text', 
     classModifierLabel : 'label', 
@@ -286,7 +286,7 @@ export const inputFieldVC = new InputField({
 });
 
 // Section 2: Form Reveal Element Case
-export const ecDiv = new Div({
+export const ecDiv = new cs.Div({
     querySelector : '.form-section--step-2',
     className : 'form-reveal',
     classNameModifier : 'element-case',
@@ -296,7 +296,7 @@ export const ecDiv = new Div({
 });
 
 // Section 2: Form Reveal Element Case: Text Input Element Alt Text
-export const inputFieldET = new InputField({
+export const inputFieldET = new cs.InputField({
     querySelector: '.form-reveal--element-case', 
     tabPaneclassName : 'input-text', 
     classModifierLabel : 'label', 
@@ -320,7 +320,7 @@ const elementTypeArr = [
         'code' : 'btn-cat'
     }
 ];
-export const selectFieldEF = new SelectField({
+export const selectFieldEF = new cs.SelectField({
     querySelector: '.form-reveal--element-case',
     className: 'input-select',
     classModifierLabel: 'label',
@@ -334,7 +334,7 @@ export const selectFieldEF = new SelectField({
 });
 
 // Section 2: Form Reveal Element Case: Text Input Element Source
-export const inputFieldESrc = new InputField({
+export const inputFieldESrc = new cs.InputField({
     querySelector : '.form-reveal--element-case', 
     tabPaneclassName : 'input-text', 
     classModifierLabel : 'label', 
@@ -348,7 +348,7 @@ export const inputFieldESrc = new InputField({
 });
 
 // Section 2: Form Reveal Element Case: Text Input Element Class
-export const inputFieldEC = new InputField({
+export const inputFieldEC = new cs.InputField({
     querySelector : '.form-reveal--element-case', 
     tabPaneclassName : 'input-text', 
     classModifierLabel : 'label', 
@@ -362,13 +362,13 @@ export const inputFieldEC = new InputField({
 });
 
 // Section 3: Button Row
-export const formSectionBR = new Section({
+export const formSectionBR = new cs.Section({
     className1 : 'form-section',
     classModifier : 'button-row'
 });
 
 // Section 3: Button Save
-export const buttonSave = new Button({
+export const buttonSave = new cs.Button({
     querySelector : '.form-section--button-row', 
     className : 'button-row', 
     classNameModifier : 'save', 
@@ -457,21 +457,21 @@ export const modal = () => {
 
 // PAGE SAVED CASES
 // Tab Pane: Saved Cases
-export const tabPaneSaved = new TabPane({
+export const tabPaneSaved = new cs.TabPane({
     querySelector : '#saved-cases',
     id : 'pane-saved-cases',
     title : 'Saved Cases:'
 });
 
 // Saved Cases: Filter group Container
-export const divFG = new Div({
+export const divFG = new cs.Div({
     querySelector : '#pane-saved-cases',
     className : 'filter-group',
     classNameModifier : 'saved-cases'
 });
 
 // Saved Cases: Filter element Region (Select)
-export const selectFieldSCR = new SelectField({
+export const selectFieldSCR = new cs.SelectField({
     querySelector: '.filter-group',
     className: 'input-select',
     classModifierLabel: 'label',
@@ -514,7 +514,7 @@ const statusSavArr = [
         'attr' : 'status-inactive-saved'
     }
 ];
-export const statusSavCheckboxes = new CheckInputs({
+export const statusSavCheckboxes = new cs.CheckInputs({
     querySelector : '.filter-group',
     className : 'input-check',
     headingText : 'Status:',
@@ -539,7 +539,7 @@ const typeSavArr = [
         'attr' : 'type-element-saved'
     }
 ];
-export const typeSavCheckboxes = new CheckInputs({
+export const typeSavCheckboxes = new cs.CheckInputs({
     querySelector : '.filter-group',
     className : 'input-check',
     headingText : 'Choose the type:',
@@ -550,7 +550,7 @@ export const typeSavCheckboxes = new CheckInputs({
 });
 
 // Saved Cases: Filter element Button Filter
-export const buttonSavFilter = new Button({
+export const buttonSavFilter = new cs.Button({
     querySelector : '.filter-group', 
     className : 'button-row', 
     classNameModifier : 'filter', 
@@ -559,14 +559,14 @@ export const buttonSavFilter = new Button({
 });
 
 // Saved Cases: Summary of Saved Cases
-export const divSum = new Div({
+export const divSum = new cs.Div({
     querySelector : '#pane-saved-cases',
     className : 'summary',
     classNameModifier : 'saved-cases'
 });
 
 // Saved Cases: Header
-export const newHeader = new Header({
+export const newHeader = new cs.Header({
     querySelector: '.summary',
     className: 'header',
     hTag: 'h2',

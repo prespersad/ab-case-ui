@@ -17,7 +17,7 @@ What I wanted to achieve is to create reusable modules and class constructors. F
 - Written functions to fire events;
 - Styled the result with Sass
 
-I've managed to finish almost all of the tasks. Unfortunately I don't have enough time to create the filters. Since it's fun to do I'll put it on my to-do-list.
+I've managed to finish almost all of the tasks. Unfortunately I did't have enough time to create the filters and the form validations. Since it's fun to do I'll put it on my to-do-list.
 
 # My own thoughts about my achievement
 

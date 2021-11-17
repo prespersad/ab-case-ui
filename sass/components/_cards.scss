@@ -15,7 +15,7 @@
       padding: 4rem 6rem;
       line-height: 1.8;
     }
-    li:not(.item--details):not(.item-format):not(.item-css-class):not(.item-source) {
+    li:not(.item--region):not(.item--details):not(.item-format):not(.item-css-class):not(.item-source) {
       text-transform: capitalize;
     }
     .item--details__list {

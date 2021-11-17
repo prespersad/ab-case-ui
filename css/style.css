@@ -623,7 +623,7 @@ a.btn--default:focus {
   line-height: 1.8;
 }
 
-.summary-list-container .list__summary li:not(.item--details):not(.item-format):not(.item-css-class):not(.item-source) {
+.summary-list-container .list__summary li:not(.item--region):not(.item--details):not(.item-format):not(.item-css-class):not(.item-source) {
   text-transform: capitalize;
 }
 

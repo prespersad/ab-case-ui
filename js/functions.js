@@ -399,12 +399,12 @@ export const displayResults = () => {
             sum.appendChild(ulListSum);
 
             let liItemSum = document.createElement('li');
-            liItemSum.classList.add('item', 'item--summary');
+            liItemSum.classList.add('item', 'item--name');
             liItemSum.textContent = `Name: ${item['case-name']}`;
             ulListSum.appendChild(liItemSum);
 
             let liItemName = document.createElement('li');
-            liItemName.classList.add('item', 'item--case-name');
+            liItemName.classList.add('item', 'item--region');
             liItemName.textContent = `Applicable region: ${item['case-region-name']}`;
             ulListSum.appendChild(liItemName);
 

@@ -37,6 +37,7 @@
     border-top: 2px solid $light-grey;
     margin: 0;
     @include py(1.4rem);
+    transition: all 0.2s ease-in-out;
     &::after {
       content: url(/images/chevron-down-icon.svg);
       width: 1rem;

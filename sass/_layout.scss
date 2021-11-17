@@ -16,6 +16,7 @@ body {
   @include ffb;
   position: relative;
   z-index: 0;
+  color: $black;
 }
 
 .wrapper {

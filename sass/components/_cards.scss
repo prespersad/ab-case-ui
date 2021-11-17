@@ -42,6 +42,14 @@
       width: 1rem;
       height: auto;
     }
+    &:hover,
+    &:focus {
+      color: $orange;
+      cursor: pointer;
+      &::after {
+        content: url(/images/chevron-down-icon-orange.svg);
+      }
+    }
   }
   &:last-of-type {
     .heading {

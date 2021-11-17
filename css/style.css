@@ -268,18 +268,6 @@ form,
   }
 }
 
-.filter-group select {
-  text-transform: capitalize;
-}
-
-.filter-group select option {
-  text-transform: capitalize;
-}
-
-.filter-group select option:first-child {
-  text-transform: lowercase;
-}
-
 .field-container--input-text, .field-container--input-select, .field-container--input-file {
   position: relative;
 }
@@ -634,7 +622,7 @@ a.btn--default:focus {
   line-height: 1.8;
 }
 
-.summary-list-container .list__summary li:not(.item--details):not(.item-css-class):not(.item-source) {
+.summary-list-container .list__summary li:not(.item--details):not(.item-format):not(.item-css-class):not(.item-source) {
   text-transform: capitalize;
 }
 
@@ -747,7 +735,7 @@ a.btn--default:focus {
   line-height: 1.8;
 }
 
-.modal .summary li span {
+.modal .summary li:not(.item--region):not(.item--details) span {
   text-transform: capitalize;
 }
 

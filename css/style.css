@@ -45,6 +45,7 @@ body {
   font-size: 1rem;
   position: relative;
   z-index: 0;
+  color: #000;
 }
 
 .wrapper {
@@ -661,6 +662,15 @@ a.btn--default:focus {
   content: url(/images/chevron-down-icon.svg);
   width: 1rem;
   height: auto;
+}
+
+.summary-list-container .heading:hover, .summary-list-container .heading:focus {
+  color: #ff6200;
+  cursor: pointer;
+}
+
+.summary-list-container .heading:hover::after, .summary-list-container .heading:focus::after {
+  content: url(/images/chevron-down-icon-orange.svg);
 }
 
 .summary-list-container:last-of-type .heading {

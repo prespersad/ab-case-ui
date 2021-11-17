@@ -20,6 +20,11 @@ a.btn {
   &--disabled {
     @include button($default-color, $light-grey);
     cursor: not-allowed;
+    &:hover,
+    &:focus {
+      @include button($default-color, $light-grey);
+      cursor: not-allowed;
+    }
   }
   &--default {
     @include button($orange, transparent);

@@ -144,7 +144,11 @@ export const getInputData = () => {
         }
 
         // Case Region
-        let caseRegion = fd.get('case-region');
+        let sel = form.querySelector('#case-region');
+        let opt = sel.options[sel.selectedIndex].text
+        fd.append('case-region-name', opt);
+
+        let caseRegion = fd.get('case-region-name');
         if(caseRegion != '') {
             let span = document.querySelector('.item--region span');
             span.textContent = '';
@@ -169,7 +173,7 @@ export const getInputData = () => {
         }
 
         // Details
-        //// Details Image Case
+        //// Details Image/Video/Element Case
         const detailList = (() => {
             let span = document.querySelector('.item--details span');
             span.innerHTML = '';
@@ -184,7 +188,7 @@ export const getInputData = () => {
                         let li = document.createElement('li');
                         li.classList.add('item', 'item--text');
                         li.textContent = `Image Text: ${caseImageText}`;
-                        ul.appendChild(li);   
+                        ul.appendChild(li);
                     }
         
                     let caseImageFormat = fd.get('image-format');
@@ -299,6 +303,10 @@ export const lsFsData = () => {
         e.preventDefault();
         let form = document.querySelector('form');
         let fd = new FormData(form);
+
+        let sel = form.querySelector('#case-region');
+        let opt = sel.options[sel.selectedIndex].text
+        fd.append('case-region-name', opt);
         
         let imageSource = fd.get('image-source');
         fd.append('image-source', imageSource.name);
@@ -315,7 +323,8 @@ export const lsFsData = () => {
             fdCase[key] = value;
         });
 
-        let fdArr = localStorage.getItem('fdSavedCases') ? JSON.parse(localStorage.getItem('fdSavedCases')) : [];
+        let ls = localStorage.getItem('fdSavedCases'),
+            fdArr = ls ? JSON.parse(ls) : [];
 
         localStorage.setItem('fdSavedCases', JSON.stringify(fdArr));
 
@@ -323,17 +332,18 @@ export const lsFsData = () => {
         localStorage.setItem('fdSavedCases', JSON.stringify(fdArr));
 
         location.reload();
-
+        
     });
 }
 
 // Activate Disabled Link after Form Submit
-export const activateLink = () => {
+export const deactivateLink = () => {
     let ls = localStorage.getItem('fdSavedCases');
     let link = document.querySelector('#menu-item-saved-cases');
     if (ls != null) {
-        link.setAttribute('href', 'saved-cases.html');
         link.classList.remove('button--disabled');
+        link.setAttribute('href', 'saved-cases.html');
+        
     } else {
         link.classList.add('button--disabled');
         link.setAttribute('href', 'javascript:void(0)');
@@ -395,7 +405,7 @@ export const displayResults = () => {
 
             let liItemName = document.createElement('li');
             liItemName.classList.add('item', 'item--case-name');
-            liItemName.textContent = `Applicable region: ${item['case-region']}`;
+            liItemName.textContent = `Applicable region: ${item['case-region-name']}`;
             ulListSum.appendChild(liItemName);
 
             let liItemStatus = document.createElement('li');

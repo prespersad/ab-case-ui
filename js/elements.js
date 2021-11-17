@@ -62,7 +62,7 @@ export const regionCreArr = async () => {
         let data = await res.json();
         data.forEach(item => {
             const option = document.createElement('option');
-            option.setAttribute('value', item.name.split(" ").join("-").toLowerCase());
+            option.setAttribute('value', item.code);
             option.textContent = item.name;
             qs.appendChild(option);
         });
@@ -486,18 +486,20 @@ export const selectFieldSCR = new cs.SelectField({
 // Saved Cases: Option Fields for Filter element Region (Select)
 export const regionFiltArr = async () => {
     let data = JSON.parse(localStorage.getItem('fdSavedCases'));
-    console.log(data);
     let qs = document.querySelector('#pane-saved-cases #case-region');
     if(data != null) {
+        let unique = [];
         data.forEach(item => {
             if(item['case-region'] != '') {
-                console.log(item['case-region']);
-                let option = document.createElement('option');
-                option.setAttribute('value', item['case-region']);
-                option.textContent = item['case-region'];
-                qs.appendChild(option);
-            } else {
-                return;
+                if(unique.indexOf(item['case-region']) < 0) {
+                    unique.push(item['case-region']);
+                    let option = document.createElement('option');
+                    option.setAttribute('value', item['case-region']);
+                    option.textContent = item['case-region-name'];
+                    qs.appendChild(option);
+                } else {
+                    return;
+                }
             }
         });
     }

@@ -31,10 +31,13 @@ export class Div {
         qs.appendChild(div);
 
         // Create element: htag
-        const heading = document.createElement(this.hTag);
-        heading.classList.add('heading');
-        heading.textContent = this.text;
-        div.appendChild(heading);
+        if(this.hTag != undefined) {
+            const heading = document.createElement(this.hTag);
+            heading.classList.add('heading');
+            heading.textContent = this.text;
+            div.appendChild(heading);
+        }
+        
     }
 }
 

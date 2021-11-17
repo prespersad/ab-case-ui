@@ -656,6 +656,8 @@ a.btn--default:focus {
   margin: 0;
   padding-top: 1.4rem;
   padding-bottom: 1.4rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .summary-list-container .heading::after {
